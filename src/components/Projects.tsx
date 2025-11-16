@@ -6,7 +6,7 @@ import AnimatedSection from './AnimatedSection';
 
 const projects = [
   {
-    title: "Blind Vision Assistant",
+    title: "BlindSight",
     description: "AI-powered image description service for visually impaired users. Combines computer vision and text-to-speech to describe images and convert descriptions to audio.",
     technologies: ["Python", "Flask", "LLaVA", "Edge-TTS", "Computer Vision", "AI"],
     github: "https://github.com/Rubyansh/blindsight_capstone",
@@ -15,7 +15,7 @@ const projects = [
     image: "/api/placeholder/400/250"
   },
   {
-    title: "AI Telegram Bot",
+    title: "AI Telegram Integration",
     description: "Multi-modal AI Telegram bot that integrates multiple AI services including text conversations, voice processing, and image generation.",
     technologies: ["Python", "Telegram Bot API", "Whisper", "Edge-TTS", "Stable Diffusion", "OpenAI API"],
     github: "https://github.com/Rubyansh/aitgbotdemo_ts",

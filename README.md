@@ -1,14 +1,13 @@
-# Rubyansh Portfolio
+# Portfolio
 
-A stunning, modern portfolio website built with Next.js 15, featuring a neon purple and black theme with smooth animations and responsive design. This portfolio showcases my projects, skills, education, and achievements as a full-stack developer and AI/ML enthusiast.
+A stunning, modern portfolio website built with Next.js 15. This portfolio showcases my projects, skills, education, and achievements as a full-stack developer and AI/ML enthusiast.
 
 ## 🚀 Features
 
-- **Modern Design**: Neon purple and black theme with glass morphism effects
 - **Smooth Animations**: Powered by Framer Motion for engaging user experience
 - **Responsive**: Fully responsive design that works on all devices
 - **Static Export**: Optimized for static hosting with Next.js 15
-- **TypeScript**: Fully typed for better development experience
+- **TypeScript**: Fully typed for better development experience (maybe not tho D:)
 - **Performance**: Optimized for fast loading and smooth interactions
 - **Accessibility**: Built with accessibility best practices
 
@@ -23,13 +22,13 @@ A stunning, modern portfolio website built with Next.js 15, featuring a neon pur
 
 ## 📱 Projects Showcased
 
-### Blind Vision Assistant
+### Blind Sight
 - **Description**: AI-powered image description service for visually impaired users
 - **Tech**: Python, Flask, LLaVA, Edge-TTS, Computer Vision
 - **Features**: Web interface, CLI tool, RESTful API, Accessibility focused
 - **GitHub**: [github.com/Rubyansh/blindsight_capstone](https://github.com/Rubyansh/blindsight_capstone)
 
-### AI Telegram Bot
+### AI Telegram Integration
 - **Description**: Multi-modal AI Telegram bot with voice processing and image generation
 - **Tech**: Python, Telegram Bot API, Whisper, Edge-TTS, Stable Diffusion
 - **Features**: Voice processing, Image generation, Text-to-speech, Multi-modal AI
