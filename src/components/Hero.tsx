@@ -36,8 +36,8 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 pb-8">
-      {/* Animated Background - Reduced intensity for mobile */}
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 pb-12">
+      {/* Animated Background */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 sm:w-64 sm:h-64 bg-purple-600/20 rounded-full blur-2xl sm:blur-3xl float-animation"></div>
         <div className="absolute bottom-1/4 right-1/4 w-48 h-48 sm:w-96 sm:h-96 bg-pink-600/10 rounded-full blur-2xl sm:blur-3xl float-animation" style={{ animationDelay: '2s' }}></div>
@@ -62,13 +62,16 @@ export default function Hero() {
             </div>
           </motion.div>
           
-          <motion.h1 
-            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-4 sm:mb-6"
-          >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 block">
-              Rubyansh
-            </span>
-          </motion.h1>
+          {/* Fixed typing animation with proper spacing */}
+          <div className="mb-4 sm:mb-6 flex justify-center">
+            <motion.h1 
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold typewriter text-container inline-block"
+            >
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600">
+                Rubyansh
+              </span>
+            </motion.h1>
+          </div>
         </motion.div>
         
         <motion.div variants={itemVariants} className="mb-8 sm:mb-12">

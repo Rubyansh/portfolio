@@ -20,24 +20,39 @@ const techCategories: TechCategories = {
     { name: "TypeScript", color: "bg-blue-600", textColor: "text-white" },
     { name: "Python", color: "bg-green-500", textColor: "text-white" },
     { name: "C", color: "bg-blue-400", textColor: "text-black" },
-    { name: "C++", color: "bg-purple-600", textColor: "text-white" }
+    { name: "C++", color: "bg-purple-600", textColor: "text-white" },
+    { name: "Node.js", color: "bg-green-600", textColor: "text-white" },
+    { name: "HTML/CSS", color: "bg-orange-500", textColor: "text-white" },
+    { name: "SQL", color: "bg-blue-500", textColor: "text-white" }
   ],
   "Frontend": [
     { name: "React", color: "bg-cyan-500", textColor: "text-black" },
     { name: "Next.js", color: "bg-black", textColor: "text-white" },
-    { name: "Tailwind CSS", color: "bg-teal-400", textColor: "text-black" }
+    { name: "Tailwind CSS", color: "bg-teal-400", textColor: "text-black" },
+    { name: "HTML", color: "bg-orange-500", textColor: "text-white" },
+    { name: "CSS", color: "bg-blue-500", textColor: "text-white" }
   ],
   "Backend & Tools": [
     { name: "Node.js", color: "bg-green-600", textColor: "text-white" },
     { name: "Express.js", color: "bg-gray-600", textColor: "text-white" },
     { name: "Prisma", color: "bg-blue-500", textColor: "text-white" },
+    { name: "JavaScript", color: "bg-yellow-400", textColor: "text-black" },
+    { name: "Java", color: "bg-red-500", textColor: "text-white" }
+  ],
+  "Databases": [
     { name: "PostgreSQL", color: "bg-blue-700", textColor: "text-white" },
+    { name: "SQLite", color: "bg-gray-500", textColor: "text-white" },
+    { name: "MySQL", color: "bg-orange-600", textColor: "text-white" }
   ],
   "DevOps & Systems": [
     { name: "Docker", color: "bg-blue-500", textColor: "text-white" },
     { name: "Git", color: "bg-orange-500", textColor: "text-white" },
     { name: "Networking", color: "bg-cyan-600", textColor: "text-white" },
-    { name: "VS Code", color: "bg-blue-600", textColor: "text-white" }
+    { name: "Data Center Management", color: "bg-purple-700", textColor: "text-white" },
+    { name: "Wireshark", color: "bg-blue-600", textColor: "text-white" },
+    { name: "Postman", color: "bg-orange-500", textColor: "text-white" },
+    { name: "VS Code", color: "bg-blue-600", textColor: "text-white" },
+    { name: "CyberChef", color: "bg-gray-800", textColor: "text-white" }
   ],
   "Game Dev": [
     { name: "Unreal Engine", color: "bg-gray-800", textColor: "text-white" }
@@ -53,7 +68,7 @@ export default function TechStack() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.08
+        staggerChildren: 0.05
       }
     }
   };
@@ -71,7 +86,7 @@ export default function TechStack() {
 
   return (
     <section ref={ref} id="skills" className="py-16 sm:py-20 px-4 bg-black/50">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <motion.h2 
           className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 30 }}

@@ -11,16 +11,33 @@ export default function About() {
   const codeBlock = `const rubyansh: Developer = {
   name: "Rubyansh",
   roles: [
-    "Full-Stack Developer",
-    "AI/ML Enthusiast", 
+    "Full-Stack Web Developer",
+    "Software Developer", 
     "Game Developer",
-    "CS Student"
+    "CS Student",
+    "AI/ML Enthusiast",
+    "Open-Source Contributor",
+    "Discord Bot Developer"
   ],
   languages: {
-    proficient: ["JavaScript", "TypeScript", "Python", "Node.js"],
+    proficient: ["JavaScript", "TypeScript", "Python", "Node.js", "HTML/CSS", "SQL"],
     learning: ["C", "C++"]
   },
-  funFact: "I break things so I can learn to fix them."
+  technologies: {
+    frontend: ["React", "Next.js", "Tailwind CSS", "HTML", "CSS"],
+    backend: ["Node.js", "Express.js", "Prisma", "JavaScript", "Java"],
+    databases: ["PostgreSQL", "SQLite", "MySQL"],
+    tools: ["Git", "Docker", "VS Code", "Postman", "Wireshark", "CyberChef"],
+    gameDev: ["Unreal Engine (learning)"]
+  },
+  currentlyLearning: [
+    "C & C++",
+    "AI/ML",
+    "Unreal Engine",
+    "Networking",
+    "Data Center Management"
+  ],
+  funFact: "I break things so I can learn to fix them. Sometimes uhhh they stay broken.."
 };`;
 
   const currentlyLearning = ["C & C++", "AI/ML", "Unreal Engine", "Networking", "Data Center Management"];
@@ -39,14 +56,14 @@ export default function About() {
           </span>
         </motion.h2>
 
-        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 items-start">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="w-full"
           >
-            <div className="bg-gray-900/50 p-4 sm:p-6 rounded-lg border border-purple-500/30 overflow-x-auto">
+            <div className="bg-gray-900/50 p-4 sm:p-6 rounded-lg border border-purple-500/30 overflow-x-auto max-h-[500px]">
               <code className="text-xs sm:text-sm md:text-base text-green-400 whitespace-pre">{codeBlock}</code>
             </div>
           </motion.div>
@@ -59,9 +76,22 @@ export default function About() {
           >
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
               Passionate developer with a love for creating innovative solutions and 
-              exploring cutting-edge technologies, especially in AI/ML and accessibility.
+              exploring cutting-edge technologies. I enjoy building projects that combine
+              AI/ML with practical applications.
             </p>
             
+            <div className="space-y-3 sm:space-y-4">
+              <h3 className="text-lg sm:text-xl font-semibold text-purple-400">Currently Working On</h3>
+              <ul className="text-gray-300 space-y-2 text-sm sm:text-base">
+                <li>• Full-stack web applications</li>
+                <li>• Backend & distributed systems</li>
+                <li>• AI/ML fundamentals and applications</li>
+                <li>• DevOps & Data Center concepts</li>
+                <li>• System-level programming (C/C++)</li>
+                <li>• Open-source contributions</li>
+              </ul>
+            </div>
+
             <div className="space-y-3 sm:space-y-4">
               <h3 className="text-lg sm:text-xl font-semibold text-purple-400">Currently Learning</h3>
               <div className="flex flex-wrap gap-2">
