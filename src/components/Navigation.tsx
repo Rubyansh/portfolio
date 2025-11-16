@@ -1,6 +1,6 @@
 // components/Navigation.tsx
 'use client';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Code2, Menu, X } from 'lucide-react';
 
@@ -18,6 +18,11 @@ export default function Navigation() {
 
   const navItems = ['Home', 'About', 'Education', 'Skills', 'Projects', 'Contact'];
 
+  const handleNavClick = (item: string) => {
+    setIsMobileMenuOpen(false);
+    // Smooth scroll is handled in the main page component
+  };
+
   return (
     <motion.nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -32,25 +37,27 @@ export default function Navigation() {
           <motion.div
             className="flex items-center space-x-2"
             whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <Code2 className="w-8 h-8 text-purple-400" />
-            <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
+            <Code2 className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400" />
+            <span className="text-lg sm:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
               Rubyansh
             </span>
           </motion.div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-6 lg:space-x-8">
             {navItems.map((item, index) => (
               <motion.a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-gray-300 hover:text-purple-400 transition-colors duration-300 relative"
+                className="text-gray-300 hover:text-purple-400 transition-colors duration-300 relative text-sm lg:text-base"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
+                onClick={() => handleNavClick(item)}
               >
                 {item}
                 <motion.div
@@ -64,37 +71,40 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="md:hidden text-gray-300"
+            className="md:hidden text-gray-300 p-2"
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </motion.button>
         </div>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <motion.div
-            className="md:hidden mt-4 py-4 glass-effect rounded-lg"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-          >
-            <div className="flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <motion.a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className="text-gray-300 hover:text-purple-400 px-4 py-2 transition-colors duration-300"
-                  whileHover={{ x: 10 }}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item}
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
-        )}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              className="md:hidden mt-4 py-4 glass-effect rounded-lg"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="flex flex-col space-y-3">
+                {navItems.map((item) => (
+                  <motion.a
+                    key={item}
+                    href={`#${item.toLowerCase()}`}
+                    className="text-gray-300 hover:text-purple-400 px-4 py-3 transition-colors duration-300 text-base font-medium border-b border-gray-800 last:border-b-0"
+                    whileTap={{ scale: 0.95, backgroundColor: 'rgba(110, 64, 201, 0.1)' }}
+                    onClick={() => handleNavClick(item)}
+                  >
+                    {item}
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </motion.nav>
   );

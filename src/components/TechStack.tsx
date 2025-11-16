@@ -32,15 +32,11 @@ const techCategories: TechCategories = {
     { name: "Express.js", color: "bg-gray-600", textColor: "text-white" },
     { name: "Prisma", color: "bg-blue-500", textColor: "text-white" },
     { name: "PostgreSQL", color: "bg-blue-700", textColor: "text-white" },
-    { name: "SQLite", color: "bg-gray-500", textColor: "text-white" },
-    { name: "MySQL", color: "bg-orange-600", textColor: "text-white" }
   ],
   "DevOps & Systems": [
     { name: "Docker", color: "bg-blue-500", textColor: "text-white" },
     { name: "Git", color: "bg-orange-500", textColor: "text-white" },
     { name: "Networking", color: "bg-cyan-600", textColor: "text-white" },
-    { name: "Wireshark", color: "bg-blue-600", textColor: "text-white" },
-    { name: "Postman", color: "bg-orange-500", textColor: "text-white" },
     { name: "VS Code", color: "bg-blue-600", textColor: "text-white" }
   ],
   "Game Dev": [
@@ -50,14 +46,14 @@ const techCategories: TechCategories = {
 
 export default function TechStack() {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: '-50px' });
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
+        staggerChildren: 0.08
       }
     }
   };
@@ -68,16 +64,16 @@ export default function TechStack() {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5
+        duration: 0.4
       }
     }
   };
 
   return (
-    <section ref={ref} className="py-20 px-4 bg-black/50">
+    <section ref={ref} id="skills" className="py-16 sm:py-20 px-4 bg-black/50">
       <div className="max-w-6xl mx-auto">
         <motion.h2 
-          className="text-4xl md:text-5xl font-bold text-center mb-16"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
@@ -91,18 +87,18 @@ export default function TechStack() {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid gap-8"
+          className="grid gap-6 sm:gap-8"
         >
           {Object.entries(techCategories).map(([category, technologies]) => (
-            <motion.div key={category} variants={itemVariants} className="space-y-4">
-              <h3 className="text-2xl font-semibold text-purple-400 mb-4">{category}</h3>
-              <div className="flex flex-wrap gap-3">
+            <motion.div key={category} variants={itemVariants} className="space-y-3 sm:space-y-4">
+              <h3 className="text-xl sm:text-2xl font-semibold text-purple-400 mb-2 sm:mb-4">{category}</h3>
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 {technologies.map((tech) => (
                   <motion.span
                     key={tech.name}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`px-4 py-2 ${tech.color} ${tech.textColor} rounded-lg font-medium border border-white/20 cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20`}
+                    className={`px-3 py-1.5 sm:px-4 sm:py-2 ${tech.color} ${tech.textColor} rounded-lg font-medium border border-white/20 cursor-pointer transition-all duration-300 text-xs sm:text-sm`}
                   >
                     {tech.name}
                   </motion.span>
